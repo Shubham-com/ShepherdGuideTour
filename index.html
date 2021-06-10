@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="D:\Tour1\Tour\node_modules\shepherd.js\dist\css\shepherd-theme-arrows.css" />
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+    <header>
+        <a href="#">Home</a>
+        <nav>
+            <ul>
+                <li class="first"><a href="#">Users</a></li>
+                <li><a href="#">Content</a></li>
+                <li><a href="#">Components</a></li>
+                <li><a href="#">Accessibility</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside>
+        <h3>My title here</h3>
+        <ul>
+            <li><a href="#">MENUS</a></li>
+            <li><a href="#">ARTICLES</a></li>
+            <li><a href="#">BANNERS</a></li>
+            <li><a href="#">SYSTEM</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <section>
+            <h1>Welcome to Joomla DashBoard</h1>
+        </section>
+    </main>
+
+    <script src="D:\Tour1\Tour\node_modules\popper.js\dist\umd\popper.min.js"></script>
+    <script src="D:\Tour1\Tour\node_modules\shepherd.js\dist\js\shepherd.min.js"></script>
+
+    <script>
+    
+        const tour = new Shepherd.Tour({
+            defaults: {
+                classes: 'shepherd-theme-arrows'
+            }
+        });
+
+        tour.addStep('example-step', {
+            text: 'This is a Top NavigationBar.',
+            attachTo: '.first bottom',
+            buttons: [
+                {
+                    text: 'Next',
+                    action: tour.next
+                }
+            ]
+        });
+
+        tour.addStep('example-step2', {
+            text: 'This is a side navigation Bar',
+            attachTo: 'h3 right',
+            buttons: [
+                {
+                    text: 'Next',
+                    action: tour.next
+                }
+            ]
+        });
+
+        tour.addStep('example-step3', {
+        text: 'Welcome to dashBoard',
+        attachTo: 'h1 bottom',
+        buttons: [
+            { 
+            text: 'End the Tour',
+            action: tour.next
+            }
+        ]
+        });
+
+        tour.start()
+
+    </script>
+
+</body>
+</html>
